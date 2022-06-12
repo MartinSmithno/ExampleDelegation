@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
     var namesOfContacts = ["Mark", "Jones", "Jessica"]
     var titlesOfContacts = ["iOS Developer", "Android Developer", "Tester"]
    
@@ -18,11 +20,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return namesOfContacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath) as! ContactsTableViewCell
+        cell.fullNamesLabel.text = namesOfContacts[indexPath.row]
+        cell.titleLabel.text = titlesOfContacts[indexPath.row]
+        return cell
     }
 
 

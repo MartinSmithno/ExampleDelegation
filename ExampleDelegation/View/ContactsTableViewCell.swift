@@ -9,6 +9,11 @@ import UIKit
 
 class ContactsTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var fullNamesLabel: UILabel!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +25,8 @@ class ContactsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func prepareForContacts (for object: Contacts) {
+        fullNamesLabel.text = object.fullName()
+        titleLabel.text = object.title
+    }
 }

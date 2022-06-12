@@ -18,7 +18,7 @@ class Contacts {
         self.title = title
     }
     
-    func fullName(name: String, surname: String) -> String {
+    func fullName() -> String {
         return "\(name) \(surname)"
     }
 }
