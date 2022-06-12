@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AddNewContact: class {
+protocol AddNewContact: AnyObject {
     func addContact(_ controller: AddToCommunityViewController, with item: Contacts)
 }
 
@@ -18,7 +18,7 @@ class AddToCommunityViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     
     weak var delegate: AddNewContact?
-    var newContact: Contacts
+    var newContact = Contacts(name: "", surname: "", title: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
