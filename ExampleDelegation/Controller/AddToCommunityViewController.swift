@@ -22,7 +22,6 @@ class AddToCommunityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
