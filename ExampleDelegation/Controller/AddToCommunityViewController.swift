@@ -7,7 +7,10 @@
 
 import UIKit
 
-protocol AddNewContact: class {
+protocol AddNewContact {
+    // addContact fonksiyonunu yerine getiren diger mainVC, fonksiyonun icerigini orada bulabilirsin.
+    //Madem isi diger VC yapacak neden bu VC'ye yazdik.
+    //Cunku buradaki bilgileri oraya tasiyacak ve islem diger VC'de gerceklestirilecek
     func addContact(_ controller: AddToCommunityViewController, with item: Contacts)
 }
 
@@ -17,12 +20,12 @@ class AddToCommunityViewController: UIViewController {
     @IBOutlet weak var surnameTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     
-    weak var delegate: AddNewContact?
-    var newContact: Contacts
+    // -> Protocol'u kullanabilmek icin delegate olusturmaliyiz!
+    var delegate: AddNewContact?
+    var newContact = Contacts(name: "", surname: "", title: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func pressedAddButton(_ sender: UIButton) {
