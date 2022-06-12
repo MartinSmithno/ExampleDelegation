@@ -11,6 +11,7 @@ class ViewController: UIViewController, AddNewContact {
     
     @IBOutlet weak var contactsTableView: UITableView!
     
+    //Olusturulan her Contact bu arrayde toplanacak
     var allContacts = [Contacts]()
     var namesOfContacts = ["Mark", "Jones", "Jessica"]
     var titlesOfContacts = ["iOS Developer", "Android Developer", "Tester"]
@@ -20,6 +21,7 @@ class ViewController: UIViewController, AddNewContact {
         // Do any additional setup after loading the view.
     }
     
+    //Diger VC'daki delegate tetiklenmis oluyor
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddPage" {
             let destinationVC = segue.destination as? AddToCommunityViewController
